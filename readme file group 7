@@ -1,0 +1,119 @@
+# Live conversation with AI Agent with Facial Movement Application
+
+An online utility enabling users to engage in live chat with a speech-generation, life-like face-expression-emulating, talkback-enabled virtual AI-driven agent.
+
+## Overview
+
+It utilizes:
+- STT (Speech-to-text) for understanding voice commands of users
+- TTS (Text-to-speech) to respond by speaking back
+- Facial animation-enabled 2D avatar created with Three.js
+- A Django backend for managing sessions, context, and analytics
+
+The user can chat via microphone or text, and the avatar blinks, lip-syncs, and emotes in synchronization with AI speech.
+
+## Features
+
+- Real-time voice chat
+- Lip-synced animated avatar
+- Emotion-driven facial expressions (happy, sad, neutral)
+- Multi-language support
+- Responsive UI (Desktop, Tablet, Mobile)
+- Chat log & subtitles
+- Analytics dashboard
+- Django + WebSocket-based communication
+
+## Technologies Used
+
+| Component         | Tech Stack                          |
+|------------------|-------------------------------------|
+| Backend          | Django 5.x, Django Channels (WebSockets)|
+| Frontend         | HTML5, CSS3, Vanilla JS             |
+| Avatar Animation | Three.js, WebGL                     |
+| Speech I/O       | Web Speech API (Browser-based)      |
+| Database         | PostgreSQL                          |
+| AI Integration   | GPT API / Rule-based NLP            |
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/ai-face-agent.git
+cd ai-face-agent
+```
+
+### 2. Create a virtual environment and install dependencies
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 3. Run database migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 4. Start the Django development server
+
+```bash
+python manage.py runserver
+```
+
+Open `http://localhost:8000` in your browser.
+
+## Avatar & Animation
+
+- Leverages Three.js sprite sheets for 2D facial expressions
+- Lip syncing is triggered through TTS phoneme mapping
+- Facial expressions are modified based on sentiment analysis of AI response
+
+## Project Structure
+
+```
+ai-face-agent/
+├── static/               # Avatar sprites, JS, CSS
+├── templates/            # HTML templates
+```
+├── chat/             # Django app for conversation
+│   ├── views.py
+│   ├── models.py
+│   ├── consumers.py      # WebSocket logic
+├── media/              # Uploaded or cached files
+├── manage.py
+└── requirements.txt
+
+## Admin Access (optional)
+
+```bash
+python manage.py createsuperuser
+```
+
+Login at: `http://localhost:8000/admin`
+
+## Testing & Browser Compatibility
+
+- Google Chrome (Full speech & TTS support)
+- Firefox (Limited voices)
+- Safari (Limited speech API support)
+
+## Future Work
+
+- 3D avatar integration
+- Gesture detection (via webcam)
+- Mobile app or PWA
+- Offline fallback using local LLM
+
+## Acknowledgements
+
+Made by Group 7:
+Janvi Gohel, Varinderjeet Kaur, Gagandeep Kaur, Priya, Ramanpreet Kaur  
+Supervised by: Dr. MD Nashid Anjum
+Course: COSC5506004 – Advanced Software Engineering
+
+
+
